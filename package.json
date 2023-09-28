@@ -1,0 +1,40 @@
+{
+    "name": "sqts-template",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/bundle.js",
+    "scripts": {
+        "build": "rollup -c",
+        "start": "dotenv -e src/env/.env.prod node .",
+        "bs": "npm run build && npm run start",
+        "dev": "dotenv -e src/env/.env.dev ts-node ./src/index.ts"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@koa/router": "^12.0.0",
+        "@types/koa-bodyparser": "^4.3.10",
+        "koa": "^2.14.2",
+        "koa-bodyparser": "^4.4.1",
+        "koa-static": "^5.0.0",
+        "reflect-metadata": "^0.1.13",
+        "sequelize": "^6.33.0",
+        "sequelize-typescript": "^2.1.5",
+        "sqlite3": "^5.1.6"
+    },
+    "devDependencies": {
+        "@rollup/plugin-terser": "^0.4.3",
+        "@rollup/plugin-typescript": "^11.1.3",
+        "@types/koa": "^2.13.8",
+        "@types/koa__router": "^12.0.0",
+        "@types/node": "^20.6.0",
+        "@types/validator": "^13.11.1",
+        "dotenv": "^16.3.1",
+        "dotenv-cli": "^7.3.0",
+        "rollup": "^3.29.1",
+        "ts-node": "^10.9.1",
+        "tslib": "^2.6.2",
+        "typescript": "^5.2.2"
+    }
+}
