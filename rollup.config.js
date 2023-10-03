@@ -14,5 +14,5 @@ module.exports = defineConfig({
         }),
         terser()
     ],
-    external: ['koa', '@koa/router', 'koa-bodyparser', 'sequelize', 'sequelize-typescript']
+    external: [/koa/, /sequelize/, /dotenv/]
 });

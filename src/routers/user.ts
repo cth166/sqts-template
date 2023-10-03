@@ -7,9 +7,9 @@ const user_router = new Router({ prefix: '/user' });
 user_router.get('/:id', async (ctx) => {
     const { id } = ctx.params
     const user = await User.findOne({
-        // attributes: {
-        //     exclude: ['createdAt', 'updatedAt']
-        // },
+        attributes: {
+            exclude: ['password']
+        },
         where: { id },
         // raw: true
     })

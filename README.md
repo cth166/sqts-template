@@ -14,7 +14,7 @@ A node backend template.
 
 While `Sequelize5.X` has already added TypeScript support, It will make you upset when you want to use [**mixins**.](https://sequelize.org/docs/v6/core-concepts/assocs/#special-methodsmixins-added-to-instances) In other words, if you organize your each model in a separate file.  you can only use half of mixins because of the circular reference.  When the associations are complex, It's unrealistic to put so many models in only one `.js/.ts` file.
 
-`Sequelize-Typescript` resolve this problem by using a getter function.
+`Sequelize-Typescript` resolved this problem by using a getter function. And just a slight change in writing in  [**lazy loading**.](https://sequelize.org/docs/v6/core-concepts/assocs/#fetching-associations---eager-loading-vs-lazy-loading) 
 
 **In Sequelize(bad error)**
 
@@ -27,6 +27,8 @@ Captain.hasMany(Ship, { foreignKey: 'captainId' })
 import Captain from './Captain';
 Ship.belongsTo(Captain) //circular reference will cause unexpected problems. The code will throw errors.
 ```
+
+You can only use either `ship.getCaptain()` or `captain.getShips()`, in order that the code runs with no error.
 
 **Sequelize-Typescript(good)**
 
@@ -62,7 +64,7 @@ class Team extends BaseModel<TeamAttributes> {
 }
 ```
 
-
+Both `team.$get('players')` and `player.$get('team')` are fine.
 
 ## Install
 
