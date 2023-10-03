@@ -1,4 +1,4 @@
-import { Table, Column, DataType } from 'sequelize-typescript';
+import { Table, Column } from 'sequelize-typescript';
 import { BaseModel } from './BaseModel'
 
 interface UserAttributes {
@@ -12,11 +12,11 @@ interface UserAttributes {
 })
 class User extends BaseModel<UserAttributes> {
 
-    @Column(DataType.STRING)
-    declare username: string;
+    @Column
+    declare username: string
 
-    @Column(DataType.STRING)
-    declare password: string;
+    @Column
+    declare password: string
 
 }
 

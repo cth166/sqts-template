@@ -7,11 +7,11 @@ const user_router = new Router({ prefix: '/user' });
 user_router.get('/:id', async (ctx) => {
     const { id } = ctx.params
     const user = await User.findOne({
-        attributes: {
-            exclude: ['createdAt', 'updatedAt']
-        },
+        // attributes: {
+        //     exclude: ['createdAt', 'updatedAt']
+        // },
         where: { id },
-        raw: true
+        // raw: true
     })
     ctx.body = user
 })
@@ -19,14 +19,15 @@ user_router.get('/:id', async (ctx) => {
 // add
 user_router.post('/', async (ctx) => {
     const userinfo = ctx.request.body as User
-    const user = await User.create(userinfo, { raw: true })
+    const user = await User.create(userinfo)
     ctx.body = user
 })
 
 // modify
 user_router.put('/', async (ctx) => {
     const userinfo = ctx.request.body as User
-    const res = await User.update(userinfo, { where: { id: userinfo.id } })
+    const user = await User.findByPk(userinfo.id)
+    const res = await user?.update(userinfo)
     ctx.body = res
 })
 
