@@ -1,7 +1,7 @@
-import Router from "@koa/router";
-import { User } from "../db/models/User";
+import Router from '@koa/router';
+import { User } from '../db/models';
 
-const user_router = new Router({ prefix: '/user' });
+const user_router = new Router({ prefix: '/user' })
 
 // find
 user_router.get('/:id', async (ctx) => {

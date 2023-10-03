@@ -11,7 +11,7 @@ interface BaseCreationAttributes extends Optional<BaseAttributes, 'id'> { }
     timestamps: false
 })
 class BaseModel<
-    TModelAttributes extends BaseAttributes,
+    TModelAttributes extends BaseAttributes = BaseAttributes,
     TCreationAttributes extends BaseCreationAttributes = Optional<TModelAttributes, 'id'>>
     extends Model<TModelAttributes, TCreationAttributes>
 {
