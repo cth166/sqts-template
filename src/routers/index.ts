@@ -1,5 +1,5 @@
-import Router from '@koa/router'
-import * as routers from './subRouters'
+import Router from '@koa/router';
+import * as routers from './subRouters';
 
 const api = new Router({ prefix: '/api' });
 
