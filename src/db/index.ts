@@ -10,5 +10,5 @@ const sequelize = new Sequelize({
     storage: process.env.DB_PATH,
     models
 });
-
+// testdemo
 export default sequelize
