@@ -2,7 +2,7 @@
 
 A node backend template.
 
- **This is just an instructional template for beimi-scada **.
+ **This is just an instructional template for beimi-scada**.
 
 **The biggest significance of this project is serving as a initial template for `cth-cli`.**
 
